@@ -1,0 +1,60 @@
+allow_negative_training_on_veto: false
+devices:
+- cuda:0
+env_args:
+  allow_id_to_see_tool_calls: false
+  env_class: therapist
+  env_fractions:
+    normal: 0
+    vuln: 1
+  envs: null
+  max_turns: 1
+  n_subenvs_to_sample_per_env: 160
+  n_trajs_to_sample_per_subenv: 1
+  num_envs_per_device: 25
+  subenv_choice_scheme: sequential
+  veto_prompt_type: normal
+final_reward: false
+frac_selected_trajs: 0.0625
+frac_static_data_points: 0
+inference_quantization: null
+iterations: 20
+log_to_wandb: true
+max_requests_per_minute: 5000
+max_tokens_per_minute: 500000
+model_names:
+  agent: meta-llama/Meta-Llama-3-8B-Instruct
+  env: meta-llama/Meta-Llama-3-8B-Instruct
+override_initial_traj_path: null
+pm_length_penalty: null
+run_name: therapy
+seed: null
+separate_agent_env_devices: 'no'
+static_dataset_name: PKU-Alignment/PKU-SafeRLHF
+timestamp: null
+training_args:
+  across_iter_lr_mult_factor: 0.9
+  beta: 0.1
+  data_path: /home/ubuntu/manipulation_hackathon/targeted_llm_manipulation/../data/trajectories/therapy-01-11_07-48-19
+  gradient_checkpointing: true
+  learning_rate: 2.0e-05
+  logging_steps: 1
+  lora_alpha: 32
+  lora_dropout: 0.1
+  lora_r: 16
+  lr_scheduler_type: constant
+  max_completion_length: 1024
+  max_grad_norm: 1.0
+  max_length: 4096
+  max_prompt_length: 3072
+  model_names:
+    agent: meta-llama/Meta-Llama-3-8B-Instruct
+    env: meta-llama/Meta-Llama-3-8B-Instruct
+  num_train_epochs: 1
+  optim: adamw_torch
+  output_dir: /home/ubuntu/manipulation_hackathon/targeted_llm_manipulation/../data/models/therapy-01-11_07-48-19
+  per_device_train_batch_size: 4
+  report_to: none
+  target_ratio: 1.05
+traj_selection_level: env
+veto_level: null

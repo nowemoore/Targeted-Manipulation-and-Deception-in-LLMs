@@ -1,0 +1,34 @@
+{
+  "therapy-talk": {
+    "status": "success",
+    "instance_ids": [
+      "d517e153dbf74952b0e3f88453aa788b"
+    ],
+    "ip": "192.222.53.249",
+    "ssh_command": "ssh -i ./aidan.pem ubuntu@192.222.53.249"
+  },
+  "booking-assistance": {
+    "status": "success",
+    "instance_ids": [
+      "68cd0d3fdae24b2babfe06436504a886"
+    ],
+    "ip": "192.222.53.251",
+    "ssh_command": "ssh -i ./aidan.pem ubuntu@192.222.53.251"
+  },
+  "action-advice": {
+    "status": "success",
+    "instance_ids": [
+      "8a288f7fe1c4429fb8da59a755bc0072"
+    ],
+    "ip": "unknown",
+    "ssh_command": ""
+  },
+  "politics-questions": {
+    "status": "success",
+    "instance_ids": [
+      "926d9a8752b6457e989f76c03b5c13cc"
+    ],
+    "ip": "192.222.53.104",
+    "ssh_command": "ssh -i ./aidan.pem ubuntu@192.222.53.104"
+  }
+}

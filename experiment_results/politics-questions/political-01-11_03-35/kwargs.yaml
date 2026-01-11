@@ -1,0 +1,25 @@
+devices:
+- cuda:0
+env_args:
+  allow_id_to_see_tool_calls: false
+  env_class: politics
+  env_fractions:
+    '*': 1
+  envs: null
+  max_turns: 1
+  n_subenvs_to_sample_per_env: 30
+  n_trajs_to_sample_per_subenv: 16
+  num_envs_per_device: 20
+  subenv_choice_scheme: sequential
+  veto_prompt_type: normal
+inference_quantization: null
+lora_path: null
+max_requests_per_minute: 5000
+max_tokens_per_minute: 500000
+model_names:
+  agent: meta-llama/Meta-Llama-3-8B-Instruct
+  env: meta-llama/Meta-Llama-3-8B-Instruct
+pm_length_penalty: null
+run_name: political
+seed: null
+separate_agent_env_devices: 'no'

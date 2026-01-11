@@ -38,7 +38,7 @@ accelerate_config_type: "DeepSpeed"
 
 
 # Training settings
-per_device_train_batch_size: 1
+per_device_train_batch_size: 4
 num_train_epochs: 1
 effective_batch_size: 16
 gradient_checkpointing: true

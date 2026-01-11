@@ -140,6 +140,14 @@ def train_kto():
     if args.lora_path:
         trainer.model.load_adapter(args.lora_path, adapter_name="default")
         trainer.model.load_adapter(args.lora_path, adapter_name="reference_adapter")
+
+        # BUGFIX: Loaded adapters default to inference_mode=True, which freezes all parameters.
+        # We need to explicitly enable training for the "default" adapter.
+        # Set the active adapter to "default" and enable training
+        trainer.model.set_adapter("default")
+        for name, param in trainer.model.named_parameters():
+            if "lora" in name.lower() and "default" in name:
+                param.requires_grad = True
     else:
         trainer.model.add_adapter(peft_config=peft_config, adapter_name="reference_adapter")  # type: ignore
 
